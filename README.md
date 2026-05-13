@@ -94,29 +94,37 @@ This project builds an **automated network intrusion detection system** using ma
 
 ## 🚀 How to Run
 
-### Prerequisites:
-1. Google Colab (recommended) or Jupyter Notebook
-2. Kaggle account with API key
+### Prerequisites
+- Google account (for Google Colab & Drive)
+- Kaggle account with API key
 
-### Steps:
-```bash
-# 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/network-intrusion-detection.git
+### Getting your Kaggle API Key
+1. Go to [kaggle.com](https://www.kaggle.com)
+2. Click your profile picture → **Settings**
+3. Scroll to **API** section → Click **Create New Token**
+4. You will receive your `username` and `key`
 
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Set up Kaggle API
-# Place kaggle.json in ~/.kaggle/
-
-# 4. Open the notebook
-jupyter notebook network_intrusion_detection.ipynb
+### Steps
+1. Open the notebook from GitHub → Click **Open in Colab**
+2. Allow access to **Google Drive** when prompted
+3. Find the cell with:
+```python
+   KAGGLE_USERNAME = "YOUR_KAGGLE_USERNAME"
+   KAGGLE_KEY = "YOUR_KAGGLE_KEY"
 ```
+   Replace with your Kaggle credentials
+4. Go to **Runtime → Run All**
+5. If prompted `replace file? [y]es, [n]o, [A]ll` → type **A** and press Enter
 
-### Running on Google Colab:
-1. Upload `kaggle.json` when prompted
-2. Run all cells sequentially
-3. Dataset downloads automatically from Kaggle
+### ⏱️ Expected Runtime
+- Total: ~30-40 minutes
+- Dataset download: ~1 minute (230MB)
+- Random Forest training: ~11 minutes
+- XGBoost + Fine Tuning: ~10 minutes
+
+### ⚠️ Note
+The dataset (~230MB) is downloaded automatically from Kaggle.
+No manual download required.
 
 ---
 
