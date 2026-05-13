@@ -156,10 +156,11 @@ To validate the robustness of the approach, the same methodology was applied to 
 ### Steps
 1. Open the notebook from GitHub → Click **Open in Colab**
 2. Allow access to **Google Drive** when prompted
-3. Find the cell with:
-```python
-   KAGGLE_USERNAME = "YOUR_KAGGLE_USERNAME"
-   KAGGLE_KEY = "YOUR_KAGGLE_KEY"
+3. Add your Kaggle credentials to **Colab Secrets** (secure!):
+   - Click the 🔑 key icon in the left sidebar
+   - Add `KAGGLE_USERNAME` → your Kaggle username
+   - Add `KAGGLE_KEY` → your API key
+   - Enable **"Notebook access"** for both
 ```
    Replace with your Kaggle credentials
 4. Go to **Runtime → Run All**
