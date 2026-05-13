@@ -91,7 +91,31 @@ This project builds an **automated network intrusion detection system** using ma
 5. Total Length of Fwd Packets (5.4%)
 
 ---
+## 🌍 Cross-Dataset Validation
 
+To validate the robustness of the approach, the same methodology was applied to a second dataset — **UNSW-NB15** (University of New South Wales, 2015).
+
+### Key Differences from CICIDS2017:
+| | CICIDS2017 | UNSW-NB15 |
+|---|---|---|
+| Records | 2,830,743 | 257,673 |
+| Attack Types | 14 | 9 |
+| Class Balance | 83% Benign | 64% Attack |
+| Year | 2017 | 2015 |
+
+### Results on UNSW-NB15:
+| Metric | CICIDS2017 | UNSW-NB15 |
+|---|---|---|
+| ROC-AUC | 1.0000 | 0.9923 |
+| Accuracy | 100% | 95% |
+| Training Time | 30 sec | 19.8 sec |
+
+### Key Finding:
+> The **same hyperparameters** (n_estimators=200, learning_rate=0.3, max_depth=6) achieved optimal results on both datasets — confirming that the approach is robust and generalizable across different network intrusion datasets.
+
+> Note: Each dataset requires its own preprocessing and encoding pipeline. The model itself is not directly transferable — but the methodology and architecture are.
+>
+> 
 ## 🚀 How to Run
 
 ### Prerequisites
