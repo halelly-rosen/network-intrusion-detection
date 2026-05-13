@@ -90,6 +90,31 @@ This project builds an **automated network intrusion detection system** using ma
 4. Init_Win_bytes_backward (6.0%)
 5. Total Length of Fwd Packets (5.4%)
 
+## 📊 Additional Validation
+
+### Precision-Recall Curve
+Unlike ROC-AUC, PR Curve focuses specifically on the minority class (attacks).
+All models were evaluated:
+
+| Model | Average Precision (AP) |
+|-------|----------------------|
+| Logistic Regression | 0.8992 |
+| Random Forest | 0.9981 |
+| XGBoost Tuned | **0.9999** 🏆 |
+
+> AP=0.9999 confirms that XGBoost maintains near-perfect Precision across all Recall thresholds — critical for imbalanced datasets.
+
+### 5-Fold Stratified Cross Validation
+To confirm model stability and rule out overfitting:
+
+| Metric | Mean | Std | Min | Max |
+|--------|------|-----|-----|-----|
+| ROC-AUC | 0.9999 | 0.0000 | 0.9998 | 1.0000 |
+| F1 | 0.9950 | 0.0009 | 0.9936 | 0.9959 |
+| Precision | 0.9941 | 0.0022 | 0.9901 | 0.9965 |
+| Recall | 0.9959 | 0.0022 | 0.9924 | 0.9982 |
+
+> Near-zero standard deviation across all folds confirms the model is **stable, robust, and not overfitting** to any specific data split.
 ---
 ## 🌍 Cross-Dataset Validation
 
